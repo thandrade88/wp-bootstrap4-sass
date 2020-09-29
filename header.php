@@ -24,20 +24,32 @@
 			<!-- header -->
 			<header class="header clear">
 
-                <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
-                    <div class="container">
-                        <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                            <?php bloginfo('name'); ?>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-						<div class="collapse navbar-collapse" id="navbar-collapse">
-                        	<?php wpbootstrapsass_nav(); ?>
-						</div>
-                    </div>
-                    <!-- /.container -->
-                </nav>
-
+			<nav class="navbar navbar-expand-lg" id="navbar">
+            <div class="container">
+                <span class="navbar-brand">                   
+                   <a href="<?php echo esc_url( home_url( '/' )); ?>">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/logo.png" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                    </a>    
+                </span>              
+                <button id="nav-icon3" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span><span></span><span></span><span></span></button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <?php
+                wp_nav_menu(array(
+                'theme_location'    => 'header-menu',
+                'container'       => 'div',
+                'container_id'    => 'navbarNavDropdown',
+                'container_class' => 'collapse navbar-collapse',
+                'menu_id'         => false,
+                'menu_class'      => 'ml-auto navbar-nav',
+                'depth'           => 3,
+                'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+                'walker'          => new wp_bootstrap_navwalker()
+                ));
+                ?>
+								</div>
+            </div>
+            
+         </nav>				
 			</header>
 			<!-- /header -->

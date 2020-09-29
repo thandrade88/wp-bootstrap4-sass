@@ -510,4 +510,14 @@ function wpbootstrapsass_shortcode_demo_2($atts, $content = null) // Demo Headin
     return '<h2>' . $content . '</h2>';
 }
 
-?>
+
+// RioSun
+add_filter('https_ssl_verify', '__return_false');
+
+/**
+ * Load custom WordPress nav walker.
+ */
+if ( ! class_exists( 'wp_bootstrap_navwalker' )) {
+    require_once(get_template_directory() . '/wp_bootstrap_navwalker.php');
+}
+

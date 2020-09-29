@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "watch": "watch 'webpack --mode development' ./"
   },
   "keywords": [],
   "author": "tone4hook",
@@ -16,6 +17,7 @@
     "babel-preset-env": "^1.7.0",
     "css-loader": "^1.0.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^6.1.0",
     "node-sass": "^4.13.1",
     "sass-loader": "^7.3.1",
     "style-loader": "^0.23.1",
@@ -24,6 +26,8 @@
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "resolve-url-loader": "^3.1.1",
+    "watch": "^1.0.2"
   }
 }
